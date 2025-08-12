@@ -1,5 +1,10 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { config as dotenv } from "dotenv";
+
+dotenv({ quiet: true });
+
+const BUILD_DIR = process.env.BUILD_DIR || "build";
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
@@ -9,8 +14,8 @@ const config = {
 
   kit: {
     adapter: adapter({
-      pages: "build",
-      assets: "build",
+      pages: BUILD_DIR,
+      assets: BUILD_DIR,
       fallback: undefined,
       precompress: false,
       strict: true,
