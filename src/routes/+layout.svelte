@@ -7,6 +7,7 @@
 
 <svelte:head>
   <link rel="icon" href={favicon}/>
+  <title>Pixoll | Computer Science Student</title>
 </svelte:head>
 
 {@render children?.()}
