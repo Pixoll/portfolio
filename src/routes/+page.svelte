@@ -9,7 +9,10 @@
 
 <Header/>
 <main
-  class="min-h-screen text-orange-500 bg-amber-50 dark:text-orage-500 dark:bg-gray-900 transition-all duration-300"
+  class={
+    "min-h-screen px-12 py-4 text-orange-500 bg-amber-50 dark:text-orage-500 dark:bg-gray-900 transition-all"
+    + " duration-600"
+  }
 >
   <Home/>
   <AboutMe/>
