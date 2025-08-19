@@ -8,15 +8,16 @@
 
 <!-- https://iconify.design -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
+  <!--suppress HtmlDeprecatedAttribute -->
   <g
     fill="none"
-      stroke="currentColor"
-      stroke-dasharray="4"
-      stroke-dashoffset="4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="1"
-    >
+    stroke="currentColor"
+    stroke-dasharray="4"
+    stroke-dashoffset="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="1"
+  >
     <path d="M13 4h1.5M13 4h-1.5M13 4v1.5M13 4v-1.5">
       <animate
         id="SVGfDZ7Me6J"
@@ -123,6 +124,7 @@
       />
     </path>
   </g>
+  <!--suppress HtmlDeprecatedAttribute -->
   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
     <g>
       <path stroke-dasharray="2" stroke-dashoffset="4" d="M12 21v1M21 12h1M12 3v-1M3 12h-1">

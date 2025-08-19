@@ -30,12 +30,9 @@ type I18nKeys<T extends object> = {
 type EsKeys = I18nKeys<typeof es>;
 type EnKeys = I18nKeys<typeof en>;
 
-/* eslint-disable @typescript-eslint/no-redundant-type-constituents */
-// noinspection TypeScriptDuplicateUnionOrIntersectionType
 type MissingKeys =
   | Exclude<EsKeys, EnKeys>
   | Exclude<EnKeys, EsKeys>;
-/* eslint-enable @typescript-eslint/no-redundant-type-constituents */
 
 /*
  * Ensure build is not possible if:
