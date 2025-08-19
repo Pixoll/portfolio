@@ -39,68 +39,53 @@
 
 <nav
   class={
-    "flex justify-between items-center px-12 py-3 w-screen text-orange-500 bg-amber-50 dark:text-orange-500"
-    + " dark:bg-gray-900 transition-all duration-300"
+    "flex justify-between items-center px-12 py-4 w-screen text-orange-500 bg-amber-50 dark:text-orange-500"
+    + " dark:bg-gray-900 transition-all duration-600"
   }
 >
-  <ul
+  <section
     class={
-      "flex gap-6 font-semibold w-fit [&>li]:hover:underline [&>li]:decoration-orange-500 [&>li]:decoration-2"
-      + " [&>li]:underline-offset-2"
+      "flex gap-6 font-bold w-fit [&>a]:hover:underline [&>a]:decoration-orange-500 [&>a]:decoration-2"
+      + " [&>a]:underline-offset-2"
     }
   >
-    <li>
-      <a href="#">{$t.sections.home}</a>
-    </li>
-    <li>
-      <a href="#about-me">{$t.sections.aboutMe}</a>
-    </li>
-    <li>
-      <a href="#experience">{$t.sections.experience}</a>
-    </li>
-    <li>
-      <a href="#projects">{$t.sections.projects}</a>
-    </li>
-    <li>
-      <a href="#education">{$t.sections.education}</a>
-    </li>
-  </ul>
+    <a href="#">{$t.sections.home}</a>
+    <a href="#about-me">{$t.sections.aboutMe}</a>
+    <a href="#experience">{$t.sections.experience}</a>
+    <a href="#projects">{$t.sections.projects}</a>
+    <a href="#education">{$t.sections.education}</a>
+  </section>
 
-  <div class="flex gap-6">
-    <ul class="flex gap-2 [&_svg]:size-8">
-      <li>
-        <a href="https://github.com/Pixoll" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-          <GitHub aria-hidden/>
-        </a>
-      </li>
-    </ul>
+  <section class="flex gap-6 items-center">
+    <div class="flex gap-4 [&_svg]:size-8 items-center">
+      <a href="https://github.com/Pixoll" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+        <GitHub aria-hidden/>
+      </a>
+    </div>
 
-    <ul class="flex gap-2 [&_svg]:size-7">
-      <li>
-        <button
-          type="button"
-          class="hover:cursor-pointer"
-          aria-label={$t.header.toggleLanguage}
-          onclick={onLanguageSwitchClick}
-        >
-          <Lang aria-hidden/>
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          class="hover:cursor-pointer"
-          aria-label={$t.header.toggleDarkMode}
-          aria-pressed={theme !== "light"}
-          onclick={onThemeSwitchClick}
-        >
-          {#if theme === "light"}
-            <Moon aria-hidden/>
-          {:else}
-            <Sun aria-hidden/>
-          {/if}
-        </button>
-      </li>
-    </ul>
-  </div>
+    <div class="flex gap-4 [&_svg]:size-7 items-center">
+      <button
+        type="button"
+        class="hover:cursor-pointer"
+        aria-label={$t.header.toggleLanguage}
+        onclick={onLanguageSwitchClick}
+      >
+        <Lang aria-hidden/>
+      </button>
+
+      <button
+        type="button"
+        class="hover:cursor-pointer"
+        aria-label={$t.header.toggleDarkMode}
+        aria-pressed={theme !== "light"}
+        onclick={onThemeSwitchClick}
+      >
+        {#if theme === "light"}
+          <Sun aria-hidden/>
+        {:else}
+          <Moon aria-hidden/>
+        {/if}
+      </button>
+    </div>
+  </section>
 </nav>
