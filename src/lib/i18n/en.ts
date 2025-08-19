@@ -1,3 +1,5 @@
+import type { I18nObject, RemoveConstantStrings } from "$lib/i18n/types";
+
 export const en = {
   langName: "English",
   sections: {
@@ -11,4 +13,6 @@ export const en = {
     toggleDarkMode: "Toggle dark mode",
     toggleLanguage: "Toggle language",
   },
-} as const;
+} as const satisfies I18nObject;
+
+export type EnStructure = RemoveConstantStrings<typeof en>;

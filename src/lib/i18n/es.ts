@@ -1,3 +1,5 @@
+import type { EnStructure } from "$lib/i18n/en";
+
 export const es = {
   langName: "Español",
   sections: {
@@ -11,4 +13,4 @@ export const es = {
     toggleDarkMode: "Alternar modo oscuro",
     toggleLanguage: "Alternar lenguaje",
   },
-} as const;
+} as const satisfies EnStructure;
