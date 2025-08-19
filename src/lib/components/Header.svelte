@@ -6,18 +6,18 @@
   import Moon from "$lib/icons/Moon.svelte";
   import Sun from "$lib/icons/Sun.svelte";
 
-  type Theme = "dark" | "light" | "initial";
+  type Theme = "dark" | "light";
 
   const THEME_KEY = "theme";
 
   let theme = $state<Theme>(browser
-    ? (localStorage.getItem(THEME_KEY) ?? "initial") as Theme
-    : "initial"
+    ? (localStorage.getItem(THEME_KEY)
+      ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    ) as Theme
+    : "dark"
   );
 
   $effect(() => {
-    if (theme === "initial") return;
-
     localStorage.setItem(THEME_KEY, theme);
 
     const classList = document.documentElement.classList;
@@ -39,8 +39,8 @@
 
 <nav
   class={
-    "flex justify-between items-center px-12 py-4 w-screen text-orange-500 bg-amber-50 dark:text-orange-500"
-    + " dark:bg-gray-900 transition-all duration-600"
+    "fixed w-full flex justify-between items-center px-12 py-4 text-orange-500 bg-amber-50 dark:text-orange-500 dark:bg-gray-900"
+    + " transition-all duration-600"
   }
 >
   <section
@@ -49,7 +49,7 @@
       + " [&>a]:underline-offset-2"
     }
   >
-    <a href="#">{$t.sections.home}</a>
+    <a href="#top">{$t.sections.home}</a>
     <a href="#about-me">{$t.sections.aboutMe}</a>
     <a href="#experience">{$t.sections.experience}</a>
     <a href="#projects">{$t.sections.projects}</a>
