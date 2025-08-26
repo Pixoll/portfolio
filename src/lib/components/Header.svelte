@@ -45,7 +45,7 @@
 >
   <section
     class={
-      "flex gap-6 font-bold w-fit [&>a]:hover:underline [&>a]:decoration-orange-500 [&>a]:decoration-2"
+      "flex gap-6 font-mono font-bold w-fit [&>a]:hover:underline [&>a]:decoration-orange-500 [&>a]:decoration-2"
       + " [&>a]:underline-offset-2"
     }
   >

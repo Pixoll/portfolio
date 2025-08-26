@@ -3,7 +3,7 @@
 </script>
 
 <section id="experience" class="flex gap-6 py-8">
-  <h1 class="basis-1/4 text-lg font-bold text-orange-500">{$t.sections.experience}</h1>
+  <h1 class="basis-1/4 text-lg font-mono font-bold text-orange-500">{$t.sections.experience}</h1>
   <div class="basis-3/4">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis pharetra libero. Nam egestas imperdiet dapibus.
     In hac habitasse platea dictumst. Cras in tellus leo. Suspendisse non varius diam. Etiam sit amet euismod ligula, et
