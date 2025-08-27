@@ -13,6 +13,14 @@ export const en = {
     toggleDarkMode: "Toggle dark mode",
     toggleLanguage: "Toggle language",
   },
+  education: {
+    universityOfConcepcion: "University of Concepción",
+    bachelorOfAstronomy: "Bachelor of Astronomy",
+    astronomy: "Astronomy",
+    bachelorOfEngineering: "Bachelor of Engineering",
+    informaticsEngineering: "Informatics Engineering (Computer Science)",
+    present: "Present",
+  },
 } as const satisfies I18nObject;
 
 export type EnStructure = RemoveConstantStrings<typeof en>;

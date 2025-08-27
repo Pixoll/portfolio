@@ -13,4 +13,12 @@ export const es = {
     toggleDarkMode: "Alternar modo oscuro",
     toggleLanguage: "Alternar lenguaje",
   },
+  education: {
+    universityOfConcepcion: "Universidad de Concepción",
+    bachelorOfAstronomy: "Grado en Astronomía",
+    astronomy: "Astronomía",
+    bachelorOfEngineering: "Grado en Ingeniería",
+    informaticsEngineering: "Ingeniería Civil Informática",
+    present: "Presente",
+  },
 } as const satisfies EnStructure;
