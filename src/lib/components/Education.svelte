@@ -6,9 +6,10 @@
     institution: string;
     start: string;
     end: string;
+    note?: string;
   };
 
-  const educationEntries: EducationEntry[] = [
+  let educationEntries = $derived<EducationEntry[]>([
     {
       title: `${$t.education.bachelorOfEngineering} - ${$t.education.informaticsEngineering}`,
       institution: $t.education.universityOfConcepcion,
@@ -20,8 +21,9 @@
       institution: $t.education.universityOfConcepcion,
       start: "2022",
       end: "2022",
+      note: $t.education.unfinished,
     },
-  ].sort((a, b) => b.start.localeCompare(a.start));
+  ]);
 </script>
 
 <section id="education" class="flex gap-6 py-8">
@@ -31,7 +33,14 @@
       {#each educationEntries as entry (entry.title)}
         <li class="flex">
           <div class="basis-5/6 space-y-2">
-            <h2 class="font-semibold">{entry.title}</h2>
+            <h2 class="font-semibold">
+              {entry.title}
+              {#if entry.note}
+              <span class="ml-2 text-sm text-gray-600 dark:text-gray-300 transition-all duration-600">
+                {entry.note}
+              </span>
+            {/if}
+            </h2>
             <p>{entry.institution}</p>
           </div>
           <span class="basis-1/6 text-end text-gray-600 dark:text-gray-300 transition-all duration-600">

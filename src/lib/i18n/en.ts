@@ -20,6 +20,7 @@ export const en = {
     bachelorOfEngineering: "Bachelor of Engineering",
     informaticsEngineering: "Informatics Engineering (Computer Science)",
     present: "Present",
+    unfinished: "Unfinished",
   },
 } as const satisfies I18nObject;
 

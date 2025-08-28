@@ -20,5 +20,6 @@ export const es = {
     bachelorOfEngineering: "Grado en Ingeniería",
     informaticsEngineering: "Ingeniería Civil Informática",
     present: "Presente",
+    unfinished: "No terminado",
   },
 } as const satisfies EnStructure;
