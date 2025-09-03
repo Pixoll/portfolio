@@ -1,7 +1,9 @@
 import type { I18nObject, RemoveConstantStrings } from "$lib/i18n/types";
 
 export const en = {
+  langId: "en",
   langName: "English",
+  mainPageTitle: "Pixoll | Computer Science Student",
   sections: {
     home: "Home",
     aboutMe: "About me",

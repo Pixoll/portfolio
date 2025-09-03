@@ -1,7 +1,9 @@
 import type { EnStructure } from "$lib/i18n/en";
 
 export const es = {
+  langId: "es",
   langName: "Español",
+  mainPageTitle: "Pixoll | Estudiante de Ciencias de la Computación",
   sections: {
     home: "Inicio",
     aboutMe: "Sobre mí",
@@ -18,7 +20,7 @@ export const es = {
     bachelorOfAstronomy: "Grado en Astronomía",
     astronomy: "Astronomía",
     bachelorOfEngineering: "Grado en Ingeniería",
-    informaticsEngineering: "Ingeniería Civil Informática",
+    informaticsEngineering: "Ingeniería Civil Informática (Ciencias de la Computación)",
     present: "Presente",
     unfinished: "No terminado",
   },

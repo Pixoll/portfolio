@@ -5,6 +5,7 @@
   import Header from "$lib/components/Header.svelte";
   import Home from "$lib/components/Home.svelte";
   import Projects from "$lib/components/Projects.svelte";
+  import { t } from "$lib/i18n/store";
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -35,6 +36,7 @@
     "min-h-screen px-12 pt-24 pb-8 text-gray-900 bg-amber-50 dark:text-amber-50 dark:bg-gray-900 transition-all"
     + " duration-600"
   }
+  lang={$t.langId}
 >
   <Home/>
   <AboutMe/>

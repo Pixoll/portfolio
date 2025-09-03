@@ -42,6 +42,7 @@
     "fixed w-full flex justify-between items-center px-12 py-4 text-orange-500 bg-amber-50 dark:text-orange-500 dark:bg-gray-900"
     + " transition-all duration-600"
   }
+  lang={$t.langId}
 >
   <section
     class={
