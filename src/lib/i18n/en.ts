@@ -14,9 +14,10 @@ export const en = {
   header: {
     toggleDarkMode: "Toggle dark mode",
     toggleLanguage: "Toggle language",
+    changeLanguage: "Change language",
   },
   education: {
-    universityOfConcepcion: "University of Concepción",
+    universityOfConcepcion: "University of Concepción, Chile",
     bachelorOfAstronomy: "Bachelor of Astronomy",
     astronomy: "Astronomy",
     bachelorOfEngineering: "Bachelor of Engineering",

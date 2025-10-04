@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from "$app/environment";
-  import { lang, t } from "$lib/i18n/store";
+  import Dropdown from "$lib/components/Dropdown.svelte";
+  import { lang, langs, t } from "$lib/i18n/store";
   import GitHub from "$lib/icons/GitHub.svelte";
   import Lang from "$lib/icons/Lang.svelte";
   import Moon from "$lib/icons/Moon.svelte";
@@ -31,23 +32,19 @@
   function onThemeSwitchClick(): void {
     theme = theme === "light" ? "dark" : "light";
   }
-
-  function onLanguageSwitchClick(): void {
-    $lang = $lang === "es" ? "en" : "es";
-  }
 </script>
 
 <nav
   class={
-    "fixed w-full flex justify-between items-center px-12 py-4 text-orange-500 bg-amber-50 dark:text-orange-500 dark:bg-gray-900"
-    + " transition-all duration-600"
+    "fixed w-full flex justify-between items-center px-12 py-4 text-orange-500 bg-amber-100 dark:text-orange-400"
+    + " dark:bg-gray-950 transition-all duration-600"
   }
   lang={$t.langId}
 >
   <section
     class={
-      "flex gap-6 font-mono font-bold w-fit [&>a]:hover:underline [&>a]:decoration-orange-500 [&>a]:decoration-2"
-      + " [&>a]:underline-offset-2"
+      "flex gap-6 font-mono font-bold w-fit [&>a]:hover:underline [&>a]:decoration-2 [&>a]:underline-offset-2"
+      + " [&>a]:decoration-orange-500 dark:[&>a]:decoration-orange-400"
     }
   >
     <a href="#top">{$t.sections.home}</a>
@@ -59,24 +56,27 @@
 
   <section class="flex gap-6 items-center">
     <div class="flex gap-4 [&_svg]:size-8 items-center">
-      <a href="https://github.com/Pixoll" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Pixoll" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
         <GitHub aria-hidden/>
       </a>
     </div>
 
     <div class="flex gap-4 [&_svg]:size-7 items-center">
-      <button
-        type="button"
-        class="hover:cursor-pointer"
-        aria-label={$t.header.toggleLanguage}
-        onclick={onLanguageSwitchClick}
-      >
-        <Lang aria-hidden/>
-      </button>
+      <Dropdown
+        class="font-mono"
+        class-options="rounded-lg border-2 border-orange-400 bg-amber-100 dark:bg-gray-900"
+        class-option="font-mono px-3 py-2"
+        title={$t.header.changeLanguage}
+        aria-label={$t.header.changeLanguage}
+        options={langs}
+        bind:value={$lang}
+        icon={Lang}
+      />
 
       <button
         type="button"
         class="hover:cursor-pointer"
+        title={$t.header.toggleDarkMode}
         aria-label={$t.header.toggleDarkMode}
         aria-pressed={theme !== "light"}
         onclick={onThemeSwitchClick}

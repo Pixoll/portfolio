@@ -21,22 +21,25 @@ export default ts.config(
       },
     },
     rules: {
-      "no-undef": "off"
-    }
+      "no-undef": "off",
+      "max-len": ["warn", {
+        code: 120,
+      }],
+    },
   },
   {
     files: [
       "**/*.svelte",
       "**/*.svelte.ts",
-      "**/*.svelte.js"
+      "**/*.svelte.js",
     ],
     languageOptions: {
       parserOptions: {
         projectService: true,
         extraFileExtensions: [".svelte"],
         parser: ts.parser,
-        svelteConfig
-      }
-    }
-  }
+        svelteConfig,
+      },
+    },
+  },
 );

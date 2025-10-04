@@ -7,6 +7,10 @@ const i18n = {
   es,
 } as const;
 
+export const langs = Object.freeze(Object.values(i18n).map(l => Object.freeze({
+  id: l.langId,
+  name: l.langName,
+})));
 export const lang = writable<Lang>("en");
 export const t = derived(lang, $lang => i18n[$lang]);
 

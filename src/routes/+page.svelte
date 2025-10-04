@@ -1,10 +1,10 @@
 <script lang="ts">
-  import AboutMe from "$lib/components/AboutMe.svelte";
-  import Education from "$lib/components/Education.svelte";
-  import Experience from "$lib/components/Experience.svelte";
-  import Header from "$lib/components/Header.svelte";
-  import Home from "$lib/components/Home.svelte";
-  import Projects from "$lib/components/Projects.svelte";
+  import AboutMe from "$lib/components/sections/AboutMe.svelte";
+  import Education from "$lib/components/sections/Education.svelte";
+  import Experience from "$lib/components/sections/Experience.svelte";
+  import Header from "$lib/components/sections/Header.svelte";
+  import Home from "$lib/components/sections/Home.svelte";
+  import Projects from "$lib/components/sections/Projects.svelte";
   import { t } from "$lib/i18n/store";
   import { onMount } from "svelte";
 
@@ -38,9 +38,11 @@
   }
   lang={$t.langId}
 >
-  <Home/>
-  <AboutMe/>
-  <Experience/>
-  <Projects/>
-  <Education/>
+  <div class="max-w-[1000px] mx-auto">
+    <Home/>
+    <AboutMe/>
+    <Experience/>
+    <Projects/>
+    <Education/>
+  </div>
 </main>
