@@ -40,6 +40,13 @@ export const en = {
     present: "Present",
     unfinished: "Unfinished",
   },
+  experience: {
+    techLead: "Technical Lead",
+    kita: "KITA, Kids Intuitive Training Assistant, Inc.",
+    present: "Present",
+    linkedIn: "LinkedIn",
+    website: "Website",
+  },
   months: {
     jan: "Jan",
     feb: "Feb",

@@ -35,7 +35,7 @@
   class="min-h-screen px-12 pt-24 pb-8 text-text bg-background transition-colors duration-600"
   lang={$t.langId}
 >
-  <div class="flex flex-col gap-4 max-w-[1000px] mx-auto">
+  <div class="flex flex-col gap-4 max-w-[1250px] mx-auto">
     <Home/>
     <AboutMe/>
     <Experience/>

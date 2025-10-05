@@ -6,7 +6,8 @@
   let props: Props = $props();
 </script>
 
-<!-- https://iconify.design -->
+<!-- eslint-disable max-len -->
+<!-- https://iconify.design mdi:github -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
   <path
     fill="currentColor"
