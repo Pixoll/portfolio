@@ -32,13 +32,10 @@
 
 <Header/>
 <main
-  class={
-    "min-h-screen px-12 pt-24 pb-8 text-gray-900 bg-amber-50 dark:text-amber-50 dark:bg-gray-900 transition-all"
-    + " duration-600"
-  }
+  class="min-h-screen px-12 pt-24 pb-8 text-text bg-background transition-colors duration-600"
   lang={$t.langId}
 >
-  <div class="max-w-[1000px] mx-auto">
+  <div class="flex flex-col gap-4 max-w-[1000px] mx-auto">
     <Home/>
     <AboutMe/>
     <Experience/>

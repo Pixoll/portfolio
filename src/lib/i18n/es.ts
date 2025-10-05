@@ -5,11 +5,26 @@ export const es = {
   langName: "Español",
   mainPageTitle: "Pixoll | Estudiante de Ciencias de la Computación",
   sections: {
-    home: "Inicio",
-    aboutMe: "Sobre mí",
-    experience: "Experiencia",
-    projects: "Proyectos",
-    education: "Educación",
+    home: {
+      id: "top",
+      title: "Inicio",
+    },
+    aboutMe: {
+      id: "about-me",
+      title: "Sobre mí",
+    },
+    experience: {
+      id: "experience",
+      title: "Experiencia",
+    },
+    projects: {
+      id: "projects",
+      title: "Proyectos",
+    },
+    education: {
+      id: "education",
+      title: "Educación",
+    },
   },
   header: {
     toggleDarkMode: "Alternar modo oscuro",
@@ -24,5 +39,19 @@ export const es = {
     informaticsEngineering: "Ingeniería Civil Informática (Ciencias de la Computación)",
     present: "Presente",
     unfinished: "No terminado",
+  },
+  months: {
+    jan: "Ene",
+    feb: "Feb",
+    mar: "Mar",
+    apr: "Abr",
+    may: "May",
+    jun: "Jun",
+    jul: "Jul",
+    aug: "Ago",
+    sep: "Sep",
+    oct: "Oct",
+    nov: "Nov",
+    dec: "Dic",
   },
 } as const satisfies EnStructure;

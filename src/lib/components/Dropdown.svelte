@@ -1,5 +1,6 @@
 <script lang="ts" generics="T">
   import type { Component } from "svelte";
+  import type { Action } from "svelte/action";
   import type { HTMLButtonAttributes } from "svelte/elements";
 
   type Option = {
@@ -33,6 +34,23 @@
     value = option.id;
     expanded = false;
   }
+
+  const clickOutside: Action<HTMLDivElement, undefined, { onclickoutside: (e: CustomEvent) => void }> = (node) => {
+    const handleClick = (event: Event) => {
+      if (node && event.target && !node.contains(event.target as Node) && !event.defaultPrevented) {
+        node.dispatchEvent(new CustomEvent("clickoutside"));
+      }
+    };
+
+    document.addEventListener("click", handleClick, true);
+
+    // noinspection JSUnusedGlobalSymbols
+    return {
+      destroy() {
+        document.removeEventListener("click", handleClick, true);
+      }
+    };
+  };
 </script>
 
 <div class="relative">
@@ -44,15 +62,16 @@
     onclick={() => expanded = !expanded}
   >
     {#if Icon}
-      <Icon aria-hidden class="inline"/>
+      <Icon aria-hidden class="inline size-3"/>
     {/if}
     {options.find(o => o.id === value)?.name}
   </button>
-  <ol
-    class={
-      "absolute -bottom-2 translate-y-full [transition:opacity_200ms,background-color_600ms] opacity-100"
-      + " has-disabled:opacity-0 " + (optionsClass ?? "")
-    }
+  <!--suppress HtmlUnknownAttribute -->
+  <div
+    class={"absolute -bottom-2 translate-y-full " + (optionsClass ?? "")}
+    hidden={!expanded}
+    use:clickOutside
+    onclickoutside={() => expanded = false}
   >
     {#each options as option (option.id)}
       <button
@@ -64,5 +83,5 @@
         {option.name}
       </button>
     {/each}
-  </ol>
+  </div>
 </div>

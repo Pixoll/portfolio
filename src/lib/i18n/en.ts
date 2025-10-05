@@ -5,11 +5,26 @@ export const en = {
   langName: "English",
   mainPageTitle: "Pixoll | Computer Science Student",
   sections: {
-    home: "Home",
-    aboutMe: "About me",
-    experience: "Experience",
-    projects: "Projects",
-    education: "Education",
+    home: {
+      id: "top",
+      title: "Home",
+    },
+    aboutMe: {
+      id: "about-me",
+      title: "About me",
+    },
+    experience: {
+      id: "experience",
+      title: "Experience",
+    },
+    projects: {
+      id: "projects",
+      title: "Projects",
+    },
+    education: {
+      id: "education",
+      title: "Education",
+    },
   },
   header: {
     toggleDarkMode: "Toggle dark mode",
@@ -24,6 +39,20 @@ export const en = {
     informaticsEngineering: "Informatics Engineering (Computer Science)",
     present: "Present",
     unfinished: "Unfinished",
+  },
+  months: {
+    jan: "Jan",
+    feb: "Feb",
+    mar: "Mar",
+    apr: "Apr",
+    may: "May",
+    jun: "Jun",
+    jul: "Jul",
+    aug: "Aug",
+    sep: "Sep",
+    oct: "Oct",
+    nov: "Nov",
+    dec: "Dec",
   },
 } as const satisfies I18nObject;
 

@@ -2,9 +2,12 @@
   import { t } from "$lib/i18n/store";
 </script>
 
-<section id="experience" class="flex gap-6 py-8">
-  <h1 class="basis-1/4 text-lg font-mono font-bold text-orange-500 dark:text-orange-400">
-    {$t.sections.experience}
+<section
+  id={$t.sections.experience.id}
+  class="flex gap-6 px-8 py-6 rounded-xl [transition:background-color_200ms] hover:bg-text/2.5"
+>
+  <h1 class="basis-1/4 text-lg font-mono font-bold text-accent duration-600">
+    {$t.sections.experience.title}
   </h1>
   <div class="basis-3/4">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis pharetra libero. Nam egestas imperdiet dapibus.

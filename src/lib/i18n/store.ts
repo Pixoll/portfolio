@@ -7,6 +7,8 @@ const i18n = {
   es,
 } as const;
 
+export type I18n = typeof i18n[keyof typeof i18n];
+
 export const langs = Object.freeze(Object.values(i18n).map(l => Object.freeze({
   id: l.langId,
   name: l.langName,
