@@ -1,9 +1,9 @@
 <script lang="ts">
   import { browser } from "$app/environment";
   import Dropdown from "$lib/components/Dropdown.svelte";
-  import { type I18n, lang, langs, t } from "$lib/i18n/store";
+  import { type I18n, lang, LANG_KEY, langs, t } from "$lib/i18n/store";
   import GitHub from "$lib/icons/GitHub.svelte";
-  import Lang from "$lib/icons/Lang.svelte";
+  import Language from "$lib/icons/Language.svelte";
   import Moon from "$lib/icons/Moon.svelte";
   import Sun from "$lib/icons/Sun.svelte";
 
@@ -31,6 +31,10 @@
     } else {
       classList.add("dark");
     }
+  });
+
+  $effect(() => {
+    localStorage.setItem(LANG_KEY, $lang);
   });
 
   function onThemeSwitchClick(): void {
@@ -72,7 +76,7 @@
         aria-label={$t.header.changeLanguage}
         options={langs}
         bind:value={$lang}
-        icon={Lang}
+        icon={Language}
       />
 
       <button
