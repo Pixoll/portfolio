@@ -11,6 +11,7 @@
     start: string;
     end: string;
     note?: string;
+    summary?: string[];
     links?: Array<{
       title: string;
       url: string;
@@ -42,9 +43,12 @@
 
 <section
   id={$t.sections.experience.id}
-  class="flex gap-6 px-8 py-6 rounded-xl [transition:background-color_200ms] hover:bg-text/2.5"
+  class={
+    "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20"
+    + " [transition:box-shadow_200ms,background-color_1500ms]"
+  }
 >
-  <h1 class="basis-1/4 text-lg font-mono font-bold text-accent duration-600">
+  <h1 class="basis-1/4 text-lg font-mono font-bold text-primary duration-1500">
     {$t.sections.experience.title}
   </h1>
   <div class="basis-3/4">
@@ -55,23 +59,28 @@
             <h2 class="font-semibold">
               {entry.position}
               {#if entry.note}
-              <span class="ml-2 text-sm text-text-accent duration-600">
+              <span class="ml-2 text-sm text-text-primary duration-1500">
                 {entry.note}
               </span>
             {/if}
             </h2>
-            <p>{entry.entity}</p>
-            {#if entry.links}
-              <div class="flex gap-2">
-                {#each entry.links as { url, title, icon: Icon } (url)}
-                  <a href={url} title={title} aria-label={title} target="_blank" rel="noopener noreferrer">
-                    <Icon class="size-5" aria-hidden/>
-                  </a>
+            <p class="flex gap-2 items-center">
+              {entry.entity}
+              {#each (entry.links ?? []) as { url, title, icon: Icon } (url)}
+                <a href={url} title={title} aria-label={title} target="_blank" rel="noopener noreferrer">
+                  <Icon class="size-5" aria-hidden/>
+                </a>
+              {/each}
+            </p>
+            {#if entry.summary}
+              <ul class="space-y-2 ml-6 pt-2 [&>li]:before:mr-2 [&>li]:before:font-mono [&>li]:before:content-['|>']">
+                {#each entry.summary as item (item)}
+                  <li>{item}</li>
                 {/each}
-              </div>
+              </ul>
             {/if}
           </div>
-          <span class="basis-1/4 text-end text-text-accent duration-600">
+          <span class="basis-1/4 text-end text-text-primary duration-1500">
             {#if entry.start !== entry.end}
               {entry.start} - {entry.end}
             {:else}

@@ -4,9 +4,12 @@
 
 <section
   id={$t.sections.aboutMe.id}
-  class="flex gap-6 px-8 py-6 rounded-xl [transition:background-color_200ms] hover:bg-text/2.5"
+  class={
+    "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20"
+    + " [transition:box-shadow_200ms,background-color_1500ms]"
+  }
 >
-  <h1 class="basis-1/4 text-lg font-mono font-bold text-accent duration-600">
+  <h1 class="basis-1/4 text-lg font-mono font-bold text-primary duration-1500">
     {$t.sections.aboutMe.title}
   </h1>
   <div class="basis-3/4">

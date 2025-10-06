@@ -30,11 +30,18 @@
   });
 </script>
 
+<div class="fixed left-0 -z-10 w-full h-screen overflow-clip">
+  <div class="relative -top-[325vh] dark:top-0 [transition:top_1500ms]">
+    <div class="h-[75vh] bg-gradient-to-t from-background3 via-background2 to-background1"></div>
+    <div class="h-[100vh] bg-gradient-to-t from-background4 to-background3"></div>
+    <div class="h-[75vh] bg-gradient-to-t from-background6 via-background5 to-background4"></div>
+    <div class="h-[125vh] bg-gradient-to-t from-background8 via-background7 to-background6"></div>
+    <div class="h-[50vh] bg-background8"></div>
+  </div>
+</div>
+
 <Header/>
-<main
-  class="min-h-screen px-12 pt-24 pb-8 text-text bg-background transition-colors duration-600"
-  lang={$t.langId}
->
+<main class="min-h-screen px-12 pt-24 pb-8 text-text transition-colors duration-1500" lang={$t.langId}>
   <div class="flex flex-col gap-4 max-w-[1250px] mx-auto">
     <Home/>
     <AboutMe/>

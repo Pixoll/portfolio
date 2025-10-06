@@ -44,15 +44,15 @@
 
 <nav
   class={
-    "fixed w-full flex justify-between items-center px-12 py-4 text-accent backdrop-blur-sm"
-    + " transition-colors duration-600"
+    "fixed z-10 w-full flex justify-between items-center px-12 py-4 text-primary backdrop-blur-sm"
+    + " transition-colors duration-1500"
   }
   lang={$t.langId}
 >
   <div
     class={
       "flex gap-6 font-mono font-bold w-fit [&>a]:hover:underline [&>a]:decoration-2 [&>a]:underline-offset-2"
-      + " [&>a]:decoration-accent"
+      + " [&>a]:decoration-primary"
     }
   >
     {#each sections as section (section.id)}
@@ -69,9 +69,9 @@
 
     <div class="flex gap-4 [&_svg]:size-7 items-center">
       <Dropdown
-        class="font-mono hover:underline decoration-2 underline-offset-2 decoration-accent"
-        class-options="rounded-lg border-2 border-accent bg-background/85 transition-colors duration-600"
-        class-option="font-mono px-3 py-2 hover:underline decoration-2 underline-offset-2 decoration-accent"
+        class="font-mono hover:underline decoration-2 underline-offset-2 decoration-primary"
+        class-options="rounded-lg border-2 border-primary bg-background/85 transition-colors duration-1500"
+        class-option="font-mono px-3 py-2 hover:underline decoration-2 underline-offset-2 decoration-primary"
         title={$t.header.changeLanguage}
         aria-label={$t.header.changeLanguage}
         options={langs}

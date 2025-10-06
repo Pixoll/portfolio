@@ -28,7 +28,6 @@ export const en = {
   },
   header: {
     toggleDarkMode: "Toggle dark mode",
-    toggleLanguage: "Toggle language",
     changeLanguage: "Change language",
   },
   education: {
