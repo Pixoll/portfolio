@@ -1,6 +1,6 @@
 <script lang="ts" generics="T">
+  import { clickOutside } from "$lib/actions/click-outside";
   import type { Component } from "svelte";
-  import type { Action } from "svelte/action";
   import type { HTMLButtonAttributes } from "svelte/elements";
 
   type Option = {
@@ -34,49 +34,31 @@
     value = option.id;
     expanded = false;
   }
-
-  const clickOutside: Action<HTMLDivElement, undefined, { onclickoutside: (e: CustomEvent) => void }> = (node) => {
-    const handleClick = (event: Event) => {
-      if (node && event.target && !node.contains(event.target as Node) && !event.defaultPrevented) {
-        node.dispatchEvent(new CustomEvent("clickoutside"));
-      }
-    };
-
-    document.addEventListener("click", handleClick, true);
-
-    // noinspection JSUnusedGlobalSymbols
-    return {
-      destroy() {
-        document.removeEventListener("click", handleClick, true);
-      }
-    };
-  };
 </script>
 
-<div class="relative">
-  <button
-    type="button"
-    class={"flex flex-row items-center gap-2 cursor-pointer " + classProp}
-    title={title}
-    aria-label={ariaLabel}
-    onclick={() => expanded = !expanded}
-  >
-    {#if Icon}
-      <Icon aria-hidden class="inline size-3"/>
-    {/if}
-    {options.find(o => o.id === value)?.name}
-  </button>
-  <!--suppress HtmlUnknownAttribute -->
+<button
+  type="button"
+  class={"flex flex-row items-center gap-2 cursor-pointer " + classProp}
+  title={title}
+  aria-label={ariaLabel}
+  onclick={() => expanded = !expanded}
+>
+  {#if Icon}
+    <Icon aria-hidden class="inline size-3"/>
+  {/if}
+  {options.find(o => o.id === value)?.name}
+</button>
+
+{#if expanded}
   <div
     class={"absolute -bottom-2 translate-y-full " + (optionsClass ?? "")}
-    hidden={!expanded}
     use:clickOutside
     onclickoutside={() => expanded = false}
   >
     {#each options as option (option.id)}
       <button
         type="button"
-        class={"w-full text-left enabled:cursor-pointer " + (optionClass ?? "")}
+        class={"w-full text-left cursor-pointer " + (optionClass ?? "")}
         onclick={() => onSelect(option)}
         disabled={!expanded}
       >
@@ -84,4 +66,4 @@
       </button>
     {/each}
   </div>
-</div>
+{/if}

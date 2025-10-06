@@ -27,8 +27,18 @@ export const es = {
     },
   },
   header: {
+    showSections: "Mostrar secciones",
+    hideSections: "Ocultar secciones",
     toggleDarkMode: "Alternar modo oscuro",
     changeLanguage: "Cambiar idioma",
+  },
+  aboutMe: {
+    content: [
+      "Soy un estudiante de ciencias de la computación y un desarrollador de software quien ha estado programando desde"
+      + " hace más de 5 años, con intereses variados, entre los cuales se encuentra la ciberseguridad, DevOps, backend,"
+      + " bases de datos y modding de videojuegos.",
+
+    ],
   },
   education: {
     universityOfConcepcion: "Universidad de Concepción, Chile",

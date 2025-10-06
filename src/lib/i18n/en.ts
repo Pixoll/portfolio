@@ -27,8 +27,17 @@ export const en = {
     },
   },
   header: {
+    showSections: "Show sections",
+    hideSections: "Hide sections",
     toggleDarkMode: "Toggle dark mode",
     changeLanguage: "Change language",
+  },
+  aboutMe: {
+    content: [
+      "I’m a computer science student and software developer with over five years of programming experience, who has "
+      + "varied interests, including cybersecurity, DevOps, backend, databases, and video game modding.",
+
+    ],
   },
   education: {
     universityOfConcepcion: "University of Concepción, Chile",

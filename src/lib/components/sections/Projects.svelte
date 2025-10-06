@@ -5,7 +5,7 @@
 <section
   id={$t.sections.projects.id}
   class={
-    "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20"
+    "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20 max-lg:flex-col"
     + " [transition:box-shadow_200ms,background-color_1500ms]"
   }
 >
