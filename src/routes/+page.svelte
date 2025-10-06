@@ -42,7 +42,13 @@
 </div>
 
 <Header/>
-<main class="min-h-screen px-12 pt-24 pb-8 text-text transition-colors duration-1500" lang={$t.langId}>
+<main
+  class={
+    "min-h-screen px-12 pt-24 pb-8 text-text max-sm:px-4"
+    + " [transition:color_1500ms,background-color_1500ms,padding_200ms]"
+  }
+  lang={$t.langId}
+>
   <div class="flex flex-col gap-4 max-w-[1250px] mx-auto">
     <Home/>
     <AboutMe/>
