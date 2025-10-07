@@ -8,7 +8,7 @@
 
 <!-- TODO cat for now -->
 <!-- eslint-disable max-len -->
-<!-- https://iconify.design mdi:github -->
+<!-- https://iconify.design solar:cat-linear -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1em" width="1em" {...props}>
   <!--suppress HtmlDeprecatedAttribute -->
   <g fill="none" stroke="currentColor" stroke-width="1.5">

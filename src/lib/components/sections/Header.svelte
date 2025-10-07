@@ -71,7 +71,7 @@
         + " max-lg:absolute max-lg:flex-col max-lg:gap-4 max-lg:translate-y-0 max-lg:top-10 max-lg:-translate-x-full"
         + " max-lg:aria-expanded:translate-x-0 max-lg:px-3 max-lg:py-2 max-lg:rounded-lg max-lg:border-2"
         + " max-lg:border-primary max-lg:bg-background/95"
-        + " [transition:visibility_200ms,opacity_200ms,translate_200ms,top_200ms,background-color_2000ms]"
+        + " [transition:visibility_200ms,opacity_200ms,translate_200ms,top_200ms,background-color_200ms]"
       }
       aria-expanded={showSections}
       use:clickOutside

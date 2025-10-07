@@ -33,11 +33,15 @@ export const en = {
     changeLanguage: "Change language",
   },
   aboutMe: {
-    content: [
-      "I’m a computer science student and software developer with over five years of programming experience, who has "
-      + "varied interests, including cybersecurity, DevOps, backend, databases, and video game modding.",
-
-    ],
+    paragraph1: "I'm a computer science student and software developer with over five years of programming experience, "
+      + "who has varied interests, including cybersecurity, DevOps, backend, databases, and video game modding. I have "
+      + "a passion for creating and helping people in the process, and I don't hesitate to work on problems that "
+      + "require solutions.",
+    paragraph2: "Over the years, I've worked with a variety of languages, including C/C++, Java, Kotlin, Python, "
+      + "JavaScript/TypeScript, HTML/CSS, Svelte, and C#, as well as tools and frameworks such as Nginx, Docker, "
+      + "Next.js, Nest.js (Express.js), Spring Boot, Django Ninja, y Jetpack Compose.",
+    paragraph3: "Some of my hobbies include reading scientific literature, tinkering with electronics, baking, playing "
+      + "the piano, and singing.",
   },
   education: {
     universityOfConcepcion: "University of Concepción, Chile",

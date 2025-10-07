@@ -33,12 +33,15 @@ export const es = {
     changeLanguage: "Cambiar idioma",
   },
   aboutMe: {
-    content: [
-      "Soy un estudiante de ciencias de la computación y un desarrollador de software quien ha estado programando desde"
-      + " hace más de 5 años, con intereses variados, entre los cuales se encuentra la ciberseguridad, DevOps, backend,"
-      + " bases de datos y modding de videojuegos.",
-
-    ],
+    paragraph1: "Soy un estudiante de ciencias de la computación y un desarrollador de software quien ha estado "
+      + "programando desde hace más de 5 años, con intereses variados, entre los cuales se encuentra la ciberseguridad,"
+      + " DevOps, backend, bases de datos y modding de videojuegos. Tengo una pasión por crear y ayudar a la gente en "
+      + "el proceso, y no dudo en trabajar en problemas que requieren solución.",
+    paragraph2: "A través de los años he trabajado con una diversa cantidad de lenguajes, como C/C++, Java, Kotlin, "
+      + "Python, JavaScript/TypeScript, HTML/CSS, Svelte, y C#, además de herramientas y frameworks como Nginx, Docker,"
+      + " Next.js, Nest.js (Express.js), Spring Boot, Django Ninja, y Jetpack Compose.",
+    paragraph3: "Algunos de mis hobbies son leer literatura científica, jugar con electrónicos, hornear, tocar piano, y"
+      + " cantar.",
   },
   education: {
     universityOfConcepcion: "Universidad de Concepción, Chile",

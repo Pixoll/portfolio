@@ -1,5 +1,44 @@
 <script lang="ts">
+  import AnimatedCarousel from "$lib/components/AnimatedCarousel.svelte";
   import { t } from "$lib/i18n/store";
+  import LogoCPlusPlus from "$lib/icons/LogoCPlusPlus.svelte";
+  import LogoCSharp from "$lib/icons/LogoCSharp.svelte";
+  import LogoDjango from "$lib/icons/LogoDjango.svelte";
+  import LogoDocker from "$lib/icons/LogoDocker.svelte";
+  import LogoJava from "$lib/icons/LogoJava.svelte";
+  import LogoJetpackCompose from "$lib/icons/LogoJetpackCompose.svelte";
+  import LogoKotlin from "$lib/icons/LogoKotlin.svelte";
+  import LogoNestJs from "$lib/icons/LogoNestJs.svelte";
+  import LogoNextJs from "$lib/icons/LogoNextJs.svelte";
+  import LogoNginx from "$lib/icons/LogoNginx.svelte";
+  import LogoPython from "$lib/icons/LogoPython.svelte";
+  import LogoSpringBoot from "$lib/icons/LogoSpringBoot.svelte";
+  import LogoSvelte from "$lib/icons/LogoSvelte.svelte";
+  import LogoTypeScript from "$lib/icons/LogoTypeScript.svelte";
+  import { type Component } from "svelte";
+  import type { SVGAttributes } from "svelte/elements";
+
+  type SvgComponent = Component<SVGAttributes<SVGElement>>;
+
+  const langSvgs: SvgComponent[] = [
+    LogoCPlusPlus,
+    LogoCSharp,
+    LogoJava,
+    LogoKotlin,
+    LogoPython,
+    LogoSvelte,
+    LogoTypeScript,
+  ];
+
+  const toolSvgs: SvgComponent[] = [
+    LogoDjango,
+    LogoDocker,
+    LogoJetpackCompose,
+    LogoNestJs,
+    LogoNextJs,
+    LogoNginx,
+    LogoSpringBoot,
+  ];
 </script>
 
 <section
@@ -13,8 +52,14 @@
     {$t.sections.aboutMe.title}
   </h1>
   <div class="basis-3/4 space-y-4">
-    {#each $t.aboutMe.content as line (line)}
-      <p>{line}</p>
-    {/each}
+    <p>{$t.aboutMe.paragraph1}</p>
+    <p>{$t.aboutMe.paragraph2}</p>
+
+    <div class="flex flex-col gap-8 w-3/4 py-8 items-center place-self-center">
+      <AnimatedCarousel svgs={langSvgs}/>
+      <AnimatedCarousel svgs={toolSvgs} offset-half/>
+    </div>
+
+    <p>{$t.aboutMe.paragraph3}</p>
   </div>
 </section>
