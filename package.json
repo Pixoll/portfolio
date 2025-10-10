@@ -34,8 +34,5 @@
     "@sveltejs/kit": {
       "cookie": "^0.7.2"
     }
-  },
-  "dependencies": {
-    "lightningcss.android-arm64.node": "^1.29.3-1"
   }
 }
