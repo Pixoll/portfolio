@@ -49,7 +49,7 @@
 <nav
   class={
     "fixed z-10 w-full flex justify-between items-center px-20 py-4 text-primary backdrop-blur-sm max-sm:px-6"
-    + " [transition:color_1500ms,background-color_1500ms,padding_200ms]"
+    + " [transition:color_1500ms,background-color_1500ms,padding_200ms] border-b-2 border-b-primary/20"
   }
   lang={$t.langId}
 >

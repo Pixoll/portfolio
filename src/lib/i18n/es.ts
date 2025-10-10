@@ -32,6 +32,10 @@ export const es = {
     toggleDarkMode: "Alternar modo oscuro",
     changeLanguage: "Cambiar idioma",
   },
+  home: {
+    hi: "Hola, soy",
+    subtitle: "Estudiante de Ciencas de la Computación y Desarrollador de Software",
+  },
   aboutMe: {
     paragraph1: "Soy un estudiante de ciencias de la computación y un desarrollador de software quien ha estado "
       + "programando desde hace más de 5 años, con intereses variados, entre los cuales se encuentra la ciberseguridad,"

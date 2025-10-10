@@ -32,6 +32,10 @@ export const en = {
     toggleDarkMode: "Toggle dark mode",
     changeLanguage: "Change language",
   },
+  home: {
+    hi: "Hi, I'm",
+    subtitle: "Computer Science student and Software Developer",
+  },
   aboutMe: {
     paragraph1: "I'm a computer science student and software developer with over five years of programming experience, "
       + "who has varied interests, including cybersecurity, DevOps, backend, databases, and video game modding. I have "
