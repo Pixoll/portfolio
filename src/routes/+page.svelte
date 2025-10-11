@@ -6,28 +6,6 @@
   import Home from "$lib/components/sections/Home.svelte";
   import Projects from "$lib/components/sections/Projects.svelte";
   import { t } from "$lib/i18n/store";
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    const navbarHeight = document.querySelector("nav")?.offsetHeight ?? 0;
-    const links = document.querySelectorAll("a[href^=\"#\"]");
-
-    links.forEach((link) => {
-      link.addEventListener("click", function (this: Element, event) {
-        event.preventDefault();
-        const targetId = this.getAttribute("href")?.substring(1);
-        if (!targetId) return;
-
-        const targetElement = document.getElementById(targetId);
-        const offsetPosition = targetElement ? targetElement.offsetTop - navbarHeight - 2 : 0;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      });
-    });
-  });
 </script>
 
 <div class="fixed left-0 -z-10 w-full h-screen overflow-clip">

@@ -13,9 +13,14 @@
   type Section = I18n["sections"][keyof I18n["sections"]];
   type Theme = "dark" | "light";
 
+  type AnchorMouseEvent = MouseEvent & {
+    currentTarget: (EventTarget & HTMLAnchorElement)
+  };
+
   const THEME_KEY = "theme";
   const small = new MediaQuery("width < 64rem", false);
 
+  let navRef: HTMLElement;
   let theme = $state<Theme>(browser
     ? (localStorage.getItem(THEME_KEY)
       ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
@@ -41,12 +46,34 @@
     localStorage.setItem(LANG_KEY, $lang);
   });
 
+  function onSectionAnchorClick(event: AnchorMouseEvent | undefined): void {
+    showSections = !small.current;
+
+    if (!event) return;
+
+    event.preventDefault();
+
+    const targetId = event.currentTarget.getAttribute("href")?.substring(1);
+    if (!targetId) return;
+
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+
+    const offsetPosition = targetElement.offsetTop - navRef.offsetHeight - 2;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+
   function onThemeSwitchClick(): void {
     theme = theme === "light" ? "dark" : "light";
   }
 </script>
 
 <nav
+  bind:this={navRef}
   class={
     "fixed z-10 w-full flex justify-between items-center px-20 py-4 text-primary border-b-2 border-b-primary/50"
     + " backdrop-blur-sm bg-background1/80 dark:bg-transparent dark:border-b-primary/20 max-sm:px-6"
@@ -88,7 +115,7 @@
           <a
             class="hover:underline decoration-2 underline-offset-2 decoration-primary"
             href={`#${section.id}`}
-            onclick={() => showSections = !small.current}
+            onclick={onSectionAnchorClick}
           >
             {section.title}
           </a>
