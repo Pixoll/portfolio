@@ -49,21 +49,23 @@
   {options.find(o => o.id === value)?.name}
 </button>
 
-{#if expanded}
-  <div
-    class={"absolute -bottom-2 translate-y-full " + (optionsClass ?? "")}
-    use:clickOutside
-    onclickoutside={() => expanded = false}
-  >
-    {#each options as option (option.id)}
-      <button
-        type="button"
-        class={"w-full text-left cursor-pointer " + (optionClass ?? "")}
-        onclick={() => onSelect(option)}
-        disabled={!expanded}
-      >
-        {option.name}
-      </button>
-    {/each}
-  </div>
-{/if}
+<div
+  class={
+    "absolute -bottom-2 translate-y-full visible opacity-100 has-disabled:invisible has-disabled:opacity-0 "
+    + "[transition:opacity_200ms,visibility_200ms] "
+    + (optionsClass ?? "")
+  }
+  use:clickOutside
+  onclickoutside={() => expanded = false}
+>
+  {#each options as option (option.id)}
+    <button
+      type="button"
+      class={"w-full text-left cursor-pointer " + (optionClass ?? "")}
+      onclick={() => onSelect(option)}
+      disabled={!expanded}
+    >
+      {option.name}
+    </button>
+  {/each}
+</div>

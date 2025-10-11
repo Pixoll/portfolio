@@ -48,8 +48,9 @@
 
 <nav
   class={
-    "fixed z-10 w-full flex justify-between items-center px-20 py-4 text-primary backdrop-blur-sm max-sm:px-6"
-    + " [transition:color_1500ms,background-color_1500ms,padding_200ms] border-b-2 border-b-primary/20"
+    "fixed z-10 w-full flex justify-between items-center px-20 py-4 text-primary border-b-2 border-b-primary/50"
+    + " backdrop-blur-sm bg-background1/80 dark:bg-transparent dark:border-b-primary/20 max-sm:px-6"
+    + " [transition:color_1500ms,background-color_1500ms,border-bottom-color_1500ms,padding_200ms]"
   }
   lang={$t.langId}
 >
@@ -66,30 +67,37 @@
 
     <div
       class={
-        "flex gap-6 font-mono font-bold w-fit invisible opacity-0 top-0 translate-x-0 -translate-y-[calc(100%+4rem)]"
-        + " aria-expanded:visible aria-expanded:opacity-100 aria-expanded:translate-y-0 transition-discrete"
-        + " max-lg:absolute max-lg:flex-col max-lg:gap-4 max-lg:translate-y-0 max-lg:top-10 max-lg:-translate-x-full"
-        + " max-lg:aria-expanded:translate-x-0 max-lg:px-3 max-lg:py-2 max-lg:rounded-lg max-lg:border-2"
-        + " max-lg:border-primary max-lg:bg-background/95"
-        + " [transition:visibility_200ms,opacity_200ms,translate_200ms,top_200ms,background-color_200ms]"
+        "w-fit invisible opacity-0 top-0 translate-x-0 -translate-y-[calc(100%+4rem)] aria-expanded:visible"
+        + " aria-expanded:opacity-100 aria-expanded:translate-y-0 transition-discrete max-lg:absolute"
+        + " max-lg:translate-y-0 max-lg:top-10 max-lg:-translate-x-full max-lg:aria-expanded:translate-x-0"
+        + " max-lg:rounded-lg max-lg:border-2 max-lg:border-primary max-lg:bg-background2/95"
+        + " [transition:visibility_200ms,opacity_200ms,translate_200ms,top_200ms]"
+        + " max-lg:[transition:visibility_200ms,opacity_200ms,translate_200ms,top_200ms,background-color_200ms]"
       }
       aria-expanded={showSections}
       use:clickOutside
       onclickoutside={() => showSections = small.current ? false : showSections}
     >
-      {#each sections as section (section.id)}
-        <a
-          class="hover:underline decoration-2 underline-offset-2 decoration-primary"
-          href={`#${section.id}`}
-          onclick={() => showSections = !small.current}
-        >
-          {section.title}
-        </a>
-      {/each}
+      <div
+        class={
+          "flex gap-6 font-mono font-bold w-full text-transparent bg-clip-text bg-gradient-to-r from-primary"
+          + " to-secondary max-lg:flex-col max-lg:gap-4 max-lg:px-3 max-lg:py-2"
+        }
+      >
+        {#each sections as section (section.id)}
+          <a
+            class="hover:underline decoration-2 underline-offset-2 decoration-primary"
+            href={`#${section.id}`}
+            onclick={() => showSections = !small.current}
+          >
+            {section.title}
+          </a>
+        {/each}
+      </div>
     </div>
   </div>
 
-  <div class="flex gap-6 items-center">
+  <div class="flex gap-6 items-center text-secondary">
     <div class="flex gap-4 [&_svg]:size-8 items-center">
       <a href="https://github.com/Pixoll" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
         <GitHub aria-hidden/>
@@ -99,9 +107,9 @@
     <div class="flex gap-4 [&_svg]:size-7 items-center">
       <div class="relative font-mono">
         <Dropdown
-          class="hover:underline decoration-2 underline-offset-2 decoration-primary"
-          class-options="rounded-lg border-2 border-primary bg-background/95 transition-colors duration-2000"
-          class-option="px-3 py-2 hover:underline decoration-2 underline-offset-2 decoration-primary"
+          class="hover:underline decoration-2 underline-offset-2 decoration-secondary"
+          class-options="rounded-lg border-2 border-secondary bg-background2/95"
+          class-option="px-3 py-2 hover:underline decoration-2 underline-offset-2 decoration-secondary"
           title={$t.header.changeLanguage}
           aria-label={$t.header.changeLanguage}
           options={langs}
