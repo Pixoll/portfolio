@@ -14,8 +14,8 @@
     const interval = setInterval(() => {
       for (let i = 0; i < nameChars.length; i++) {
         setTimeout(() => {
-          const char = nameChars[i];
-          nameChars[i].fontClass = char.fontClass ? "" : "font-mono";
+          const char = nameChars[i]!;
+          char.fontClass = char.fontClass ? "" : "font-mono";
         }, msPerChar * i);
       }
     }, msPerChar * name.length * 10);

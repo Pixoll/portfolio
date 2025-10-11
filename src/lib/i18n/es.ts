@@ -34,7 +34,7 @@ export const es = {
   },
   home: {
     hi: "Hola, soy",
-    subtitle: "Estudiante de Ciencas de la Computación y Desarrollador de Software",
+    subtitle: "Estudiante de Ciencias de la Computación y Desarrollador de Software",
   },
   aboutMe: {
     paragraph1: "Soy un estudiante de ciencias de la computación y un desarrollador de software quien ha estado "
