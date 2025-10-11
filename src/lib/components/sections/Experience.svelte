@@ -12,11 +12,11 @@
     end: string;
     note?: string;
     summary?: string[];
-    links?: Array<{
+    links?: {
       title: string;
       url: string;
       icon: Component<SVGAttributes<SVGElement>>;
-    }>;
+    }[];
   };
 
   let experienceEntries = $derived<ExperienceEntry[]>([
@@ -77,6 +77,7 @@
             {#if entry.links}
               <div class="flex gap-2">
                 {#each entry.links as { url, title, icon: Icon } (url)}
+                  <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
                   <a href={url} title={title} aria-label={title} target="_blank" rel="noopener noreferrer">
                     <Icon class="size-5" aria-hidden/>
                   </a>

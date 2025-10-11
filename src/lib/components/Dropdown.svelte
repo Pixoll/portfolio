@@ -62,7 +62,7 @@
     <button
       type="button"
       class={"w-full text-left cursor-pointer " + (optionClass ?? "")}
-      onclick={() => onSelect(option)}
+      onclick={() => { onSelect(option) }}
       disabled={!expanded}
     >
       {option.name}

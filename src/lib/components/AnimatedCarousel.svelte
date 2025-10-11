@@ -3,7 +3,7 @@
   import type { SVGAttributes } from "svelte/elements";
 
   type Props = {
-    svgs: Array<Component<SVGAttributes<SVGElement>>>;
+    svgs: Component<SVGAttributes<SVGElement>>[];
     "offset-half"?: boolean;
   };
 

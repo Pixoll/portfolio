@@ -4,7 +4,7 @@ type ClickOutsideAction = Action<HTMLDivElement, undefined, { onclickoutside: (e
 
 export const clickOutside: ClickOutsideAction = (node) => {
   const handleClick = (event: Event) => {
-    if (node && event.target && !node.contains(event.target as Node) && !event.defaultPrevented) {
+    if (event.target && !node.contains(event.target as Node) && !event.defaultPrevented) {
       node.dispatchEvent(new CustomEvent("clickoutside"));
     }
   };

@@ -2,8 +2,13 @@
   import "../app.css";
   import favicon from "$lib/assets/favicon.svg";
   import { t } from "$lib/i18n/store";
+  import type { Snippet } from "svelte";
 
-  let { children } = $props();
+  type Props = {
+    children?: Snippet;
+  };
+
+  let { children }: Props = $props();
 </script>
 
 <svelte:head>

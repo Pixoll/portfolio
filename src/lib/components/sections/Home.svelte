@@ -13,14 +13,18 @@
   onMount(() => {
     const interval = setInterval(() => {
       for (let i = 0; i < nameChars.length; i++) {
-        setTimeout(() => {
-          const char = nameChars[i]!;
-          char.fontClass = char.fontClass ? "" : "font-mono";
-        }, msPerChar * i);
+        const char = nameChars[i];
+        if (char) {
+          setTimeout(() => {
+            char.fontClass = char.fontClass ? "" : "font-mono";
+          }, msPerChar * i);
+        }
       }
     }, msPerChar * name.length * 10);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   });
 </script>
 

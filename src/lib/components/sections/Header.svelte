@@ -24,7 +24,7 @@
   );
 
   let showSections = $derived(!small.current);
-  let sections = $derived<Section[]>(Object.values($t.sections));
+  let sections = $derived(Object.values($t.sections) as Section[]);
 
   $effect(() => {
     localStorage.setItem(THEME_KEY, theme);
