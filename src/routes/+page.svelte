@@ -9,9 +9,9 @@
 </script>
 
 <div class="fixed left-0 -z-10 w-full h-screen overflow-clip">
-  <div class="relative -top-[525vh] dark:top-0 [transition:top_1500ms]">
+  <div class="relative -top-[575vh] dark:top-0 [transition:top_1500ms]">
     <div class="h-[125vh] bg-gradient-to-t from-background3 via-background2 to-background1"></div>
-    <div class="h-[125vh] bg-gradient-to-t from-background4 to-background3"></div>
+    <div class="h-[175vh] bg-gradient-to-t from-background4 to-background3"></div>
     <div class="h-[100vh] bg-gradient-to-t from-background6 via-background5 to-background4"></div>
     <div class="h-[150vh] bg-gradient-to-t from-background8 via-background7 to-background6"></div>
     <div class="h-[50vh] bg-background8"></div>
