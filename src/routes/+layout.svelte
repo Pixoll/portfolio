@@ -1,9 +1,9 @@
 <script lang="ts">
   import "../app.css";
   import favicon from "$lib/assets/favicon.svg";
-  import Header from "$lib/components/sections/Header.svelte";
   import { t } from "$lib/i18n/store";
   import type { Snippet } from "svelte";
+  import Header from "./components/Header.svelte";
 
   type Props = {
     children?: Snippet;
