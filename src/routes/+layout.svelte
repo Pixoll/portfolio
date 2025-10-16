@@ -2,14 +2,31 @@
   import "../app.css";
   import favicon from "$lib/assets/favicon.svg";
   import { t } from "$lib/i18n/store";
-  import type { Snippet } from "svelte";
+  import { mount, onMount, type Snippet } from "svelte";
   import Header from "./components/Header.svelte";
+  import Star from "./components/Star.svelte";
 
   type Props = {
     children?: Snippet;
   };
 
   let { children }: Props = $props();
+
+  const starsAmount = 200;
+
+  let starsContainerRef = $state<HTMLDivElement>();
+
+  onMount(() => {
+    if (!starsContainerRef) {
+      return;
+    }
+
+    for (let i = 0; i < starsAmount; i++) {
+      mount(Star, {
+        target: starsContainerRef,
+      });
+    }
+  });
 </script>
 
 <svelte:head>
@@ -17,7 +34,7 @@
   <title>{$t.mainPageTitle}</title>
 </svelte:head>
 
-<div class="fixed left-0 -z-10 w-full h-screen overflow-clip">
+<div class="fixed left-0 -z-20 w-full h-screen overflow-clip" aria-hidden="true">
   <div class="relative -top-[575vh] dark:top-0 [transition:top_1500ms]">
     <div class="h-[125vh] bg-gradient-to-t from-background3 via-background2 to-background1"></div>
     <div class="h-[175vh] bg-gradient-to-t from-background4 to-background3"></div>
@@ -25,6 +42,14 @@
     <div class="h-[150vh] bg-gradient-to-t from-background8 via-background7 to-background6"></div>
     <div class="h-[50vh] bg-background8"></div>
     <div class="h-[75vh] bg-gradient-to-t from-background9 to-background8"></div>
+  </div>
+</div>
+
+<div class="fixed left-0 -z-10 w-full h-screen overflow-clip" aria-hidden="true">
+  <div
+    class="relative size-full opacity-0 dark:opacity-25 transition-opacity duration-1500"
+    bind:this={starsContainerRef}
+  >
   </div>
 </div>
 

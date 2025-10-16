@@ -25,6 +25,7 @@
   --color-background9: #e1f7da;
 
   --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-twinkle: twinkle 4s infinite ease-in-out alternate;
 
   @keyframes infinite-scroll {
     from {
@@ -33,6 +34,16 @@
 
     to {
       transform: translateX(-100%);
+    }
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: 0.1;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 }

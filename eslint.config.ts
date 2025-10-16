@@ -35,6 +35,9 @@ export default defineConfig(
         code: 120,
       }],
       "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+      "@typescript-eslint/restrict-template-expressions": ["warn", {
+        allowNumber: true,
+      }],
     },
   },
   {

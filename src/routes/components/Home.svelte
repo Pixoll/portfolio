@@ -33,7 +33,7 @@
     <span class="text-[4rem] font-bold">
       {$t.home.hi}
       <span class="flex gap-4 h-24 items-center -mt-4">
-        <Logo class="size-[4rem] text-primary" aria-hidden/>
+        <Logo class="size-[4rem] shrink-0 text-primary" aria-hidden/>
         <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
           {#each nameChars as { char, fontClass }, i (i)}
             <span class={fontClass}>{char}</span>
