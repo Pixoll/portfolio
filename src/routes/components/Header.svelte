@@ -51,15 +51,16 @@
 
     if (!event) return;
 
+    const targetRef = event.currentTarget.getAttribute("href");
+    if (!targetRef) return;
+
+    if (!targetRef.startsWith(page.url.pathname)) return;
+
     event.preventDefault();
 
-    const targetId = event.currentTarget.getAttribute("href")?.substring(1);
-    if (!targetId) return;
-
+    const targetId = targetRef.substring(targetRef.startsWith("#") ? 1 : 2);
     const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
-    const offsetPosition = targetElement.offsetTop - navRef.offsetHeight - 2;
+    const offsetPosition = targetElement ? targetElement.offsetTop - navRef.offsetHeight - 2 : 0;
 
     window.scrollTo({
       top: offsetPosition,
@@ -112,11 +113,13 @@
         }
       >
         {#each $sectionEntries as section (section.id)}
+          <!-- eslint-disable svelte/no-navigation-without-resolve -->
           <a
             class="hover:underline decoration-2 underline-offset-2 decoration-primary"
-            href={`#${section.id}`}
+            href={`/#${section.id}`}
             onclick={onSectionAnchorClick}
           >
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
             {section.title}
           </a>
         {/each}
