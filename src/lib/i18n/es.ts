@@ -5,26 +5,11 @@ export const es = {
   langName: "Español",
   mainPageTitle: "Pixoll | Estudiante de Ciencias de la Computación",
   sections: {
-    home: {
-      id: "top",
-      title: "Inicio",
-    },
-    aboutMe: {
-      id: "about-me",
-      title: "Sobre mí",
-    },
-    experience: {
-      id: "experience",
-      title: "Experiencia",
-    },
-    projects: {
-      id: "projects",
-      title: "Proyectos",
-    },
-    education: {
-      id: "education",
-      title: "Educación",
-    },
+    home: "Inicio",
+    aboutMe: "Sobre mí",
+    experience: "Experiencia",
+    projects: "Proyectos",
+    education: "Educación",
   },
   header: {
     showSections: "Mostrar secciones",

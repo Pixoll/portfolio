@@ -1,8 +1,10 @@
 <script lang="ts">
   import { browser } from "$app/environment";
+  import { page } from "$app/state";
   import { clickOutside } from "$lib/actions/click-outside";
   import Dropdown from "$lib/components/Dropdown.svelte";
-  import { type I18n, lang, LANG_KEY, langs, t } from "$lib/i18n/store";
+  import { sectionEntries } from "$lib/data/sections";
+  import { lang, LANG_KEY, langs, t } from "$lib/i18n/store";
   import GitHub from "$lib/icons/GitHub.svelte";
   import Language from "$lib/icons/Language.svelte";
   import Logo from "$lib/icons/Logo.svelte";
@@ -10,7 +12,6 @@
   import Sun from "$lib/icons/Sun.svelte";
   import { MediaQuery } from "svelte/reactivity";
 
-  type Section = I18n["sections"][keyof I18n["sections"]];
   type Theme = "dark" | "light";
 
   type AnchorMouseEvent = MouseEvent & {
@@ -29,7 +30,6 @@
   );
 
   let showSections = $derived(!small.current);
-  let sections = $derived(Object.values($t.sections) as Section[]);
 
   $effect(() => {
     localStorage.setItem(THEME_KEY, theme);
@@ -111,7 +111,7 @@
           + " to-secondary max-lg:flex-col max-lg:gap-4 max-lg:px-3 max-lg:py-2"
         }
       >
-        {#each sections as section (section.id)}
+        {#each $sectionEntries as section (section.id)}
           <a
             class="hover:underline decoration-2 underline-offset-2 decoration-primary"
             href={`#${section.id}`}

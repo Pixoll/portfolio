@@ -8,7 +8,6 @@ const i18n = {
   es,
 } as const;
 
-export type I18n = typeof i18n[keyof typeof i18n];
 export type Lang = keyof typeof i18n;
 
 export const LANG_KEY = "lang";

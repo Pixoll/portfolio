@@ -1,59 +1,21 @@
 <script lang="ts">
-  import { t } from "$lib/i18n/store";
-  import Globe from "$lib/icons/Globe.svelte";
-  import LinkedIn from "$lib/icons/LinkedIn.svelte";
-  import type { Component } from "svelte";
-  import type { SVGAttributes } from "svelte/elements";
-
-  type ExperienceEntry = {
-    entity: string;
-    position: string;
-    start: string;
-    end: string;
-    note?: string;
-    summary?: string[];
-    links?: {
-      title: string;
-      url: string;
-      icon: Component<SVGAttributes<SVGElement>>;
-    }[];
-  };
-
-  let experienceEntries = $derived<ExperienceEntry[]>([
-    {
-      entity: $t.experience.kita,
-      position: $t.experience.techLead,
-      start: `${$t.months.may} 2025`,
-      end: $t.experience.present,
-      links: [
-        {
-          title: $t.experience.website,
-          url: "https://kitainc.com/",
-          icon: Globe,
-        },
-        {
-          title: $t.experience.linkedIn,
-          url: "https://www.linkedin.com/company/kita-app/",
-          icon: LinkedIn,
-        },
-      ],
-    },
-  ]);
+  import { experienceEntries } from "$lib/data/experience";
+  import { sections } from "$lib/data/sections";
 </script>
 
 <section
-  id={$t.sections.experience.id}
+  id={$sections.experience.id}
   class={
     "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20 max-lg:flex-col"
     + " [transition:box-shadow_200ms,background-color_1500ms]"
   }
 >
   <h1 class="basis-1/4 text-lg font-mono font-bold text-primary duration-1500">
-    {$t.sections.experience.title}
+    {$sections.experience.title}
   </h1>
   <div class="basis-3/4">
     <ol class="space-y-8">
-      {#each experienceEntries as entry (`${entry.entity}-${entry.position}`)}
+      {#each $experienceEntries as entry (`${entry.entity}-${entry.position}`)}
         <li class="flex flex-row-reverse gap-4 max-md:flex-col max-md:gap-2">
           <span class="basis-1/4 md:text-end text-text-accent duration-1500">
             {#if entry.start !== entry.end}

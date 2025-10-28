@@ -1,5 +1,6 @@
 <script lang="ts">
   import AnimatedCarousel from "$lib/components/AnimatedCarousel.svelte";
+  import { sections } from "$lib/data/sections";
   import { t } from "$lib/i18n/store";
   import LogoCPlusPlus from "$lib/icons/LogoCPlusPlus.svelte";
   import LogoCSharp from "$lib/icons/LogoCSharp.svelte";
@@ -42,14 +43,14 @@
 </script>
 
 <section
-  id={$t.sections.aboutMe.id}
+  id={$sections.aboutMe.id}
   class={
     "flex gap-6 px-8 py-6 rounded-xl bg-text/2.5 hover:ring-2 hover:ring-primary/20 max-lg:flex-col"
     + " [transition:box-shadow_200ms,background-color_1500ms]"
   }
 >
   <h1 class="basis-1/4 text-lg font-mono font-bold text-primary duration-1500">
-    {$t.sections.aboutMe.title}
+    {$sections.aboutMe.title}
   </h1>
   <div class="basis-3/4 space-y-4">
     <p>{$t.aboutMe.paragraph1}</p>

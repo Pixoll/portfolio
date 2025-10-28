@@ -2,15 +2,12 @@
   import "../app.css";
   import favicon from "$lib/assets/favicon.svg";
   import { t } from "$lib/i18n/store";
-  import { mount, onMount, type Snippet } from "svelte";
+  import { mount, onMount } from "svelte";
+  import type { LayoutProps } from "./$types";
   import Header from "./components/Header.svelte";
   import Star from "./components/Star.svelte";
 
-  type Props = {
-    children?: Snippet;
-  };
-
-  let { children }: Props = $props();
+  let { children }: LayoutProps = $props();
 
   const starsAmount = 200;
 
@@ -61,5 +58,5 @@
   }
   lang={$t.langId}
 >
-  {@render children?.()}
+  {@render children()}
 </main>
