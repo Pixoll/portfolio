@@ -156,6 +156,7 @@
         aria-pressed={theme !== "light"}
         onclick={onThemeSwitchClick}
       >
+        <!-- TODO high CPU usage, should use SMIL or CSS -->
         {#if theme === "light"}
           <Sun aria-hidden/>
         {:else}

@@ -43,6 +43,7 @@
 </div>
 
 <div class="fixed left-0 -z-10 w-full h-screen overflow-clip" aria-hidden="true">
+  <!-- TODO extremely high CPU usage, should use CSS -->
   <div
     class="relative size-full opacity-0 dark:opacity-25 transition-opacity duration-1500"
     bind:this={starsContainerRef}

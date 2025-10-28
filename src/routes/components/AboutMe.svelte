@@ -57,6 +57,7 @@
     <p>{$t.aboutMe.paragraph2}</p>
 
     <div class="flex flex-col gap-8 w-3/4 py-8 items-center place-self-center">
+      <!-- TODO moderate CPU usage, find a way to not use duplicate -->
       <AnimatedCarousel svgs={langSvgs}/>
       <AnimatedCarousel svgs={toolSvgs} offset-half/>
     </div>
